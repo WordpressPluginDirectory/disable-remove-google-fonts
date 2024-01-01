@@ -1,0 +1,123 @@
+= 1.5.7 =
+
+* Tested with WP6.4
+
+= 1.5.6 =
+
+* Tested with WP6.3
+
+= 1.5.5 =
+
+* Add compatibility for Ajax Search Lite.
+
+= 1.5.3 =
+
+* Add compatibility for Kadence Blocks and GeneratePress.
+
+= 1.5.2 =
+
+* Add compatibility for Unyson and Sucuri.
+
+= 1.5.1 =
+
+* Add compatibility for photo-gallery plugin.
+
+= 1.5.0 =
+
+* Admin improvements.
+
+= 1.4.9 =
+
+* Add compatibility for X theme.
+
+= 1.4.8 =
+
+* Add welcome page and test instructions.
+
+= 1.4.7 =
+
+* Add compatibility for Kadence theme.
+
+= 1.4.6 =
+
+* Add compatibility for WPBakery.
+
+= 1.4.4 =
+
+* Add compatibility for Vantage.
+
+= 1.4.3 =
+
+* Add compatibility for Avada.
+
+= 1.4.2 =
+
+* Remove the preconnect hint to fonts.gstatic.com in the Divi theme.
+
+= 1.4.1 =
+
+* Change priority on wp_enqueue_scripts as some themes use 10000.
+
+= 1.4.0 =
+
+* Add compatibility for Appointment.
+
+= 1.3.9 =
+
+* Add compatibility for Enfold.
+
+= 1.3.7 =
+
+* Add compatibility for Hemingway.
+
+= 1.3.6 =
+
+* Add compatibility for Hueman.
+
+= 1.3.5 =
+
+* Add compatibility for aThemes themes.
+
+= 1.3.3 =
+
+* Add compatibility for Anders Noren's (@anlino) themes.
+
+= 1.3.2 =
+
+* Remove fonts added by the Divi Extra theme.
+
+= 1.3.0 =
+
+* Remove fonts added by the Mailpoet plugin.
+
+= 1.2.0 =
+
+* Remove fonts added by the Apollo13 Theme Framework.
+
+= 1.1.7 =
+
+* Remove fonts added by the Hustle plugin.
+
+= 1.1.6 =
+
+* Remove fonts added by the original Jupiter theme.
+
+= 1.1.5 =
+
+* Remove fonts added by the JupiterX theme.
+
+= 1.1.4 =
+
+* Remove fonts added by the Beaver Builder plugin.
+
+= 1.1.3 =
+
+* Remove fonts added to wp_print_styles hook.
+
+= 1.1.2 =
+
+* Add Revolution Slider compatibility.
+
+= 1.1.1 =
+
+* Tested with WP5.3.

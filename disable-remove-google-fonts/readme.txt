@@ -2,7 +2,7 @@
 Contributors: DannyCooper
 Tags: gdpr, dsgvo, google fonts, disable google fonts, optimize
 Requires at least: 4.8
-Tested up to: 6.6
+Tested up to: 6.7
 License: GPLv2 or later
 Stable tag: trunk
 
@@ -33,22 +33,25 @@ This plugin will work with all WordPress themes and has been specifically tested
 * Twenty Twenty-Two
 * Twenty Twenty-Three
 * Twenty Twenty-Four
-* GeneratePress
+* Twenty Twenty-Five
 * Acabado
 * Avada
+* Blocksy
+* ColorMag
+* Divi Extra
 * Enfold
-* Sydney
+* GeneratePress
 * Hestia
 * Hueman
-* Vantage
-* ColorMag
-* Kadence
-* Shapely
-* OnePress
 * JupiterX
+* Kadence
+* Neve
+* OnePress
+* Shapely
 * Stackable
 * Storefront
-* Divi Extra
+* Sydney
+* Vantage
 * Zerif Lite
 
 It will also remove Google Fonts loaded by the following plugins:

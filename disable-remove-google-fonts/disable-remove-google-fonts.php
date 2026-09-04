@@ -5,9 +5,10 @@
  * Description: Optimize frontend performance by removing Google Fonts. GDPR-friendly.
  * Author: Fonts Plugin
  * Author URI: https://fontsplugin.com
- * Version: 1.7.0
+ * Version: 2.0.2
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+ * GitHub Plugin URI: https://github.com/fontsplugin/disable-remove-google-fonts.git
  *
  * @package disable-remove-google-fonts
  */
@@ -31,7 +32,7 @@ if ( ! defined( 'DRGF_PLUGIN_FILE' ) ) {
 }
 
 if ( ! defined( 'DRGF_VERSION' ) ) {
-	define( 'DRGF_VERSION', '1.7.0' );
+	define( 'DRGF_VERSION', '2.0.2' );
 }
 
 if ( ! defined( 'DRGF_DIR_PATH' ) ) {
@@ -42,7 +43,16 @@ if ( ! defined( 'DRGF_DIR_URL' ) ) {
 	define( 'DRGF_DIR_URL', plugin_dir_url( __FILE__ ) );
 }
 
+require DRGF_DIR_PATH . 'inc/font-audit.php';
 require DRGF_DIR_PATH . 'inc/remove-google-fonts.php';
+
+register_activation_hook(
+	__FILE__,
+	function () {
+		add_option( 'drgf_do_activation_redirect', true );
+		set_transient( 'drgf_needs_initial_scan', true, 300 );
+	}
+);
 
 add_action(
 	'init',
@@ -51,3 +61,4 @@ add_action(
 		require DRGF_DIR_PATH . 'admin/class-drgf-notice.php';
 	}
 );
+

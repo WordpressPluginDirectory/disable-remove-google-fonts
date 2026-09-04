@@ -1,3 +1,13 @@
+/* ── Menu Icon ─────────────────────────────────────────── */
+
+#adminmenu .toplevel_page_drgf .wp-menu-image img {
+	background-size: 16px auto;
+	width: 16px;
+	height: auto;
+}
+
+/* ── Layout ────────────────────────────────────────────── */
+
 .drgf-admin__wrap {
 	margin: 50px 35px;
 	max-width: 960px;
@@ -16,6 +26,14 @@
 	font-weight: bold;
 }
 
+.drgf-admin__wrap img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+	margin-bottom: 1rem;
+}
+
 .drgf-admin__content {
 	background: #fff;
 	border-radius: 3px;
@@ -26,7 +44,7 @@
 }
 
 .drgf-admin__content__header {
-	border-top: 5px solid #b43534;
+	border-top: 5px solid var(--wp-admin-theme-color, #b43534);
 	border-radius: 5px 5px 0 0;
 }
 
@@ -57,6 +75,299 @@
 	padding: 4px 16px;
 }
 
+.drgf-admin__success {
+	background: #edfaef;
+	border-left: 4px solid #00a32a;
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin-bottom: 1.5em;
+}
+
+.drgf-admin__success p,
+.drgf-admin__warning p {
+	margin: 0 !important;
+	font-size: 14px !important;
+	color: #1d2327;
+}
+
+.drgf-admin__warning {
+	background: #fcf9e8;
+	border-left: 4px solid #dba617;
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin-bottom: 1.5em;
+}
+
+.drgf-admin__note {
+	font-size: 13px !important;
+	color: #a7aaad;
+	margin-top: 1.5em;
+}
+
+.drgf-admin__note a {
+	color: #a7aaad;
+}
+
+/* ── Font Audit ────────────────────────────────────────── */
+
+.drgf-audit {
+	margin: 2em 0 1.5em;
+	padding: 20px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+}
+
+.drgf-audit__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+
+.drgf-audit__header-left {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.drgf-audit__title {
+	font-size: 15px !important;
+	font-weight: 600 !important;
+	margin: 0 !important;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.drgf-audit__meta {
+	font-size: 13px;
+	color: #646970;
+}
+
+.drgf-audit__rescan {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center;
+	gap: 4px;
+	white-space: nowrap;
+	line-height: 1;
+	padding: 4px 12px !important;
+	height: auto !important;
+	min-height: 30px;
+}
+
+.drgf-audit__rescan-icon {
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+}
+
+@keyframes drgf-spin {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+
+.drgf-spin {
+	animation: drgf-spin 0.8s linear infinite;
+}
+
+/* ── Pro CTA ───────────────────────────────────────────── */
+
+.drgf-audit__pro-preview {
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	margin-top: 16px;
+	overflow: hidden;
+}
+
+.drgf-audit__pro-cta {
+	background: linear-gradient(135deg, #f0f4ff 0%, #fff 100%);
+	border: 1px solid #b8c9e8;
+	border-left: 4px solid #2271b1;
+	border-radius: 4px;
+	padding: 0;
+	margin-top: 12px;
+	overflow: hidden;
+}
+
+.drgf-audit__pro-preview-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.drgf-audit__pro-preview-row--header {
+	background: #fff;
+	gap: 0;
+	border-bottom: none;
+}
+
+.drgf-audit__pro-preview-row--header .drgf-audit__pro-preview-label {
+	padding: 16px 20px 0;
+}
+
+.drgf-audit__pro-preview-row:last-child {
+	border-bottom: none;
+}
+
+.drgf-audit__pro-preview-label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #a7aaad;
+}
+
+.drgf-audit__pro-preview-text {
+	font-size: 16px !important;
+	line-height: 1.4 !important;
+	margin: 0 !important;
+	padding: 12px 20px;
+	background: #fff;
+	color: #1d2327;
+}
+
+.drgf-audit__pro-preview-text--fallback {
+	font-family: Arial, Helvetica, sans-serif !important;
+	color: #787c82;
+}
+
+.drgf-audit__pro-body {
+	padding: 26px 26px;
+}
+
+.drgf-audit__pro-heading {
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	margin: 0 0 8px !important;
+	color: #1d2327;
+}
+
+.drgf-audit__pro-desc {
+	font-size: 15px !important;
+	line-height: 1.6 !important;
+	margin: 0 0 16px !important;
+	color: #50575e;
+}
+
+.drgf-audit__pro-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.drgf-audit__pro-button.button.button-primary {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center;
+	font-size: 13px;
+	padding: 6px 20px !important;
+	height: auto !important;
+	line-height: 1;
+}
+
+.drgf-audit__pro-proof {
+	font-size: 12px;
+	color: #787c82;
+}
+
+/* ── Unremoved Fonts Warning ──────────────────────────── */
+
+.drgf-audit__unremoved {
+	background: #fcf9e8;
+	border-left: 4px solid #dba617;
+	padding: 16px 20px;
+	border-radius: 4px;
+	margin-top: 12px;
+}
+
+.drgf-audit__unremoved p {
+	margin: 0 0 4px !important;
+	font-size: 14px !important;
+}
+
+.drgf-audit__unremoved ul {
+	margin: 8px 0;
+	padding-left: 1.2em;
+	font-family: monospace;
+}
+
+.drgf-audit__unremoved li {
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+
+.drgf-audit__unremoved-source {
+	color: #a7aaad;
+}
+
+/* ── Status Messages ───────────────────────────────────── */
+
+.drgf-audit__status {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 16px 18px;
+}
+
+.drgf-audit__status .dashicons {
+	font-size: 22px;
+	width: 22px;
+	height: 22px;
+	flex-shrink: 0;
+	margin-top: 1px;
+}
+
+.drgf-audit__status--success {
+	border: 1px solid #a7d18a;
+}
+
+.drgf-audit__status--success .dashicons {
+	color: #00a32a;
+}
+
+.drgf-audit__status--warning {
+	border: 1px solid #dba617;
+}
+
+.drgf-audit__status--warning .dashicons {
+	color: #dba617;
+}
+
+.drgf-audit__status-title {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	margin: 0 0 2px !important;
+}
+
+.drgf-audit__status-desc {
+	font-size: 13px !important;
+	color: #646970;
+	margin: 0 !important;
+}
+
+/* ── Loading State ─────────────────────────────────────── */
+
+.drgf-audit__loading {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 16px 0;
+	color: #646970;
+	font-size: 14px;
+}
+
+.drgf-audit__loading .spinner {
+	float: none;
+	margin: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+
 @media only screen and (max-width: 960px) {
 	.drgf-admin__content {
 		max-width: 98%;
@@ -64,6 +375,15 @@
 	}
 
 	.drgf-admin__wrap {
-			margin: 1%;
+		margin: 1%;
+	}
+
+	.drgf-audit__pro-preview-row {
+		grid-template-columns: 1fr;
+	}
+
+	.drgf-audit__pro-actions {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }

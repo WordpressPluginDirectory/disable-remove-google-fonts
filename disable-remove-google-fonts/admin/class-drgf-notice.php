@@ -52,24 +52,41 @@ if ( ! class_exists( 'DRGF_Notice' ) ) :
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 		}
 
-		/**
-		 * Enqeue the styles and scripts.
-		 */
-		public function enqueue() {
-			wp_enqueue_script( 'drgf-scripts', esc_url( DRGF_DIR_URL . 'admin/scripts.js' ), array( 'jquery' ), DRGF_VERSION, false );
+	/**
+	 * Enqeue the styles and scripts.
+	 */
+	public function enqueue() {
+		wp_enqueue_script( 'drgf-scripts', esc_url( DRGF_DIR_URL . 'admin/scripts.js' ), array( 'jquery' ), DRGF_VERSION, false );
+		wp_localize_script(
+			'drgf-scripts',
+			'drgfNotice',
+			array(
+				'nonce' => wp_create_nonce( 'drgf_dismiss_notice' ),
+			)
+		);
+	}
+
+	/**
+	 * AJAX handler to store the state of dismissible notices.
+	 */
+	public function dismiss_notice() {
+		// Verify nonce.
+		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'drgf_dismiss_notice' ) ) {
+			wp_die( esc_html__( 'Security check failed.', 'disable-remove-google-fonts' ) );
 		}
 
-		/**
-		 * AJAX handler to store the state of dismissible notices.
-		 */
-		public function dismiss_notice() {
-			if ( isset( $_POST['type'] ) ) {
-				// Pick up the notice "type" - passed via jQuery (the "data-notice" attribute on the notice).
-				$type = sanitize_text_field( wp_unslash( $_POST['type'] ) );
-				// Store it in the options table.
-				update_option( 'dismissed-' . $type, true );
-			}
+		// Check user capabilities.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'disable-remove-google-fonts' ) );
 		}
+
+		if ( isset( $_POST['type'] ) ) {
+			// Pick up the notice "type" - passed via jQuery (the "data-notice" attribute on the notice).
+			$type = sanitize_text_field( wp_unslash( $_POST['type'] ) );
+			// Store it in the options table.
+			update_option( 'dismissed-' . $type, true );
+		}
+	}
 
 		/**
 		 * Display the admin notice.
@@ -80,13 +97,13 @@ if ( ! class_exists( 'DRGF_Notice' ) ) :
 			}
 			?>
 
-			<div class="notice notice-<?php echo esc_attr( $this->type ); ?> is-dismissible notice-dismiss-drgf" data-notice="<?php echo esc_attr( $this->slug ); ?>">
-				<p>
-					<?php
-						echo $this->message; // WPCS: XSS ok.
-					?>
-				</p>
-			</div>
+		<div class="notice notice-<?php echo esc_attr( $this->type ); ?> is-dismissible notice-dismiss-drgf" data-notice="<?php echo esc_attr( $this->slug ); ?>">
+			<p>
+				<?php
+					echo wp_kses_post( $this->message );
+				?>
+			</p>
+		</div>
 			<?php
 		}
 	}

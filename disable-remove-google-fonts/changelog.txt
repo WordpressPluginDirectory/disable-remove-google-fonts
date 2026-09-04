@@ -1,3 +1,21 @@
+= 2.0.2 =
+
+* Tested with WP7.1
+
+= 2.0.1 =
+
+* New: Font Audit — see exactly which Google Font families your site was loading, with live previews
+* New: Source attribution — shows which theme/plugin handle loaded each font
+* New: Auto-scan on activation with manual re-scan
+
+= 1.8.2 =
+
+* Introduced new "Check Google Fonts" feature
+
+= 1.7.1 =
+
+* Tested with WP6.8
+
 = 1.7.0 =
 
 * Tested with Blocksy and Neve themes
